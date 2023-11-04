@@ -1,0 +1,94 @@
+.textAnimation {
+    background: linear-gradient(90deg, transparent 0%, #fff 0%);
+    background-size: 200% 100%;
+    animation: fadeBackground 2s ease infinite;
+}
+
+.icon-animation {
+    animation: moveIcon 2s ease infinite;
+}
+
+.loading-bar {
+    /* width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, black 0%, transparent 0%); */
+    /* Fondo negro inicial */
+    /* background-size: 0% 100%; */
+    /* Ancho inicial del fondo */
+    /* animation: fill 3s linear forwards; */
+    /* Duración y animación */
+    position: relative;
+    /* Oculta el interior del SVG */
+    z-index: 5;
+}
+
+/* .loading-bar::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    height: 50px;
+    top: 0;
+    background: red;
+    width: 101px;
+    z-index: 10;
+} */
+
+.pathLoading {
+    width: 100%;
+    right: 0;
+    background: red;
+    z-index: 9000;
+    border-radius: 50px;
+    height: 60%;
+    top: 50%;
+    transform: translateY(-50%);
+    position: absolute;
+    animation: expandRightToLeft 1s ease forwards;
+    /* Aplica la animación CSS */
+}
+
+@keyframes expandRightToLeft {
+    from {
+        right: 0;
+        /* Comienza desde la derecha */
+    }
+
+    to {
+        right: -100%;
+        /* Termina a la izquierda */
+    }
+}
+
+@keyframes width {
+    to {
+        width: 100%;
+        /* Llena el fondo de izquierda a derecha */
+    }
+}
+
+@keyframes fillBar {
+    to {
+        stroke-dashoffset: 0;
+        /* Llenado completo de izquierda a derecha */
+    }
+}
+
+@keyframes fadeBackground {
+    0% {
+        background-position: 0% 0;
+    }
+
+    100% {
+        background-position: 100% 0;
+    }
+}
+
+@keyframes moveIcon {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(100%);
+    }
+}
