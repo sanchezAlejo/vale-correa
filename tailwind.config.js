@@ -2,10 +2,15 @@ module.exports = {
   content: [
     "./pages/**/*.{js,jsx,tsx}",
     "./components/**/*.{js,jsx,tsx}",
-    "./*.{js,jsx,tsx}",
+    "*/*.{js,jsx,tsx,ttf}",
+    "./*.{js,jsx,tsx,ttf}",
   ],
   theme: {
     extend: {
+      fontFamily: {
+        playfair: ["PlayfairDisplay-Black", "sans"],
+        playfairExtraBold: ["PlayfairDisplay-ExtraBold", "sans"],
+      },
       animation: {
         "fade-out-1000": "fadeOut 1s ease-out",
         "fade-out-2000": "fadeOut 2s ease-out",

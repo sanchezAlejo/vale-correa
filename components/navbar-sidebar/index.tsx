@@ -1,13 +1,15 @@
 import React from "react";
 import NavBar from "../home/nav-bar";
 import SideBar from "../home/nav-bar/years-side-bar";
-
-const index = () => {
+import { AppProvider } from "../utils/AppProvider";
+const NavSide = () => {
   return (
-    <div className="w-full max-w-5xl mx-auto">
-      <NavBar />
-      <SideBar years={1} />
+    <div className="w-full ">
+      <AppProvider>
+        <NavBar />
+        <SideBar />
+      </AppProvider>
     </div>
   );
 };
-export default index;
+export default NavSide;
