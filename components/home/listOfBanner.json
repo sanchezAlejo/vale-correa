@@ -34,5 +34,29 @@
     {
         "id": 9,
         "name": "filosofía"
+    },
+    {
+        "id": 10,
+        "name": "derecho"
+    },
+    {
+        "id": 12,
+        "name": "psicología"
+    },
+    {
+        "id": 13,
+        "name": "bienestar"
+    },
+    {
+        "id": 14,
+        "name": "filosofía"
+    },
+    {
+        "id": 15,
+        "name": "visual"
+    },
+    {
+        "id": 16,
+        "name": "inspiración"
     }
 ]

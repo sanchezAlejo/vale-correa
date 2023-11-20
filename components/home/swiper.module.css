@@ -1,0 +1,77 @@
+/* .swiper>div {
+    width: auto !important;
+}
+
+.swiper>div>div {
+    width: auto !important;
+}
+
+.swiper>div>div>div {
+    width: auto !important;
+}
+
+.swiper>div>div>div {
+    width: auto !important;
+}
+
+.swiper>div>div>div>div {
+    width: auto !important;
+}
+
+.swiper>div>div>div>div>div {
+    width: auto !important;
+}
+
+.swiper>div>div>div>div>div>div {
+    width: auto !important;
+}
+
+.slick-slide {
+    width: auto !important;
+}
+
+.slick-active {
+    width: auto !important;
+}
+
+.slick-cloned {
+    width: auto !important;
+
+}
+
+.slick-slide, .slick-active, .slick-cloned {
+    width: auto !important;
+
+} */
+.slide-item {
+    width: auto !important;
+    /* Ajustar el ancho de los elementos */
+    padding: 0 5px;
+    /* Reducir el espacio entre elementos */
+}
+
+.slick-slide {
+    text-align: center;
+}
+
+.slick-active {
+
+    text-align: center;
+}
+
+.slick-cloned {
+    text-align: center;
+
+}
+.slick-track{
+    width: auto!important;
+}
+.slick-track>div{
+    width: auto!important;
+}
+.slick-track>div>div{
+    width: auto!important;
+}
+.slick-track>div>div>div{
+    width: auto!important;
+}
