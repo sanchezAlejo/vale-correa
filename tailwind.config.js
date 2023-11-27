@@ -7,9 +7,12 @@ module.exports = {
   ],
   theme: {
     extend: {
+      translate: {
+        translate50: "-50%",
+      },
       fontFamily: {
-        playfair: ["PlayfairDisplay-Black", "sans"],
-        playfairExtraBold: ["PlayfairDisplay-ExtraBold", "sans"],
+        playfair: ["PlayfairDisplay-Regular", "sans"],
+        playfairExtraBold: ["PlayfairDisplay-Bold", "sans"],
       },
       animation: {
         "fade-out-1000": "fadeOut 1s ease-out",

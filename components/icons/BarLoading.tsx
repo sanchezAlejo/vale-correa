@@ -17,7 +17,6 @@ export const BarLoading: React.FC<iconType> = ({ size, color, background }) => {
               width="133.67"
               height="22.01"
               rx="8.56"
-            
             />
             <path
               className="overflow-hidden"
@@ -34,7 +33,11 @@ export const BarLoading: React.FC<iconType> = ({ size, color, background }) => {
           </g>
         </g>
       </svg>
-      <span className=" pathLoading"></span>
+      <span className="absolute top-[50%] right-[5%]  w-[90%] flex justify-end h-[55%] translate-y-[-50%] overflow-hidden">
+        <span className="relative flex w-[90%] h-[90%] ">
+          <span className=" pathLoading"></span>
+        </span>
+      </span>
       {/* <span className="navSpan bg-red-600 z-[-10] rounded-[25px]  absolute left-[2%] top-[51%] translate-y-[-50%] "></span> */}
     </div>
   );
