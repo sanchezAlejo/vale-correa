@@ -1,35 +1,43 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Favicon from "../../icons/Favicon";
 import BarLoading from "../../icons/BarLoading";
 
 const Welcome = () => {
+  const [timer, setTimer] = useState({ timer1: false, timer2: false });
+  useEffect(() => {
+    setTimer({ ...timer, timer1: true });
+    setTimeout(() => {
+      setTimer({ timer1: false, timer2: true });
+    }, 2500);
+  }, []);
   return (
     <div className="fixed flex items-center justify-center w-full h-screen bg-white">
-      <div
-        className="relative flex flex-col items-center justify-center w-full h-[10vw] overflow-hidden
-      "
-      >
-        <div className="absolute  textAnimation w-[0]  text-9xl top-1/2 translate-y-translate50 font-playfair translate-x-translate50">
-          VCORREA
-        </div>
-        <div className="absolute overflow-hidden -translate-y-1/2 bg-white -translate-x-translate50 top-1/2 favicon-anim">
-          <div className="h-full faviconDisable">
-            <Favicon size="100%" />
+      {timer.timer1 && (
+        <div className="relative flex items-center justify-center gap-3 overflow-hidden bg-white h-max w-max welcome-none ">
+          <div className=" bg-white z-10 w-[185px] h-[200px] relative flex justify-end items-center">
+            <span className="absolute h-[95%] w-[95%] flex items-center justify-center  -translate-x-1/2 favicon-none left-1/2">
+              <Favicon size="100%" />
+            </span>
+            <span className="absolute h-[95%] w-[95%] flex items-center justify-center  -translate-x-1/2 favicon-block left-1/2">
+              <Favicon size="100%" background="#c16f38" />
+            </span>
           </div>
-          <div className="h-full faviconActive">
-            <Favicon size="100%" background="red" />
-          </div>
+          <h2 className="text-9xl font-playfair favicon-welcome">VCORREA</h2>
         </div>
-      </div>
-      {/* <div className="text-center">
-        <h2 className="text-4xl font-playfairExtraBold"><strong>hola!</strong> </h2>
-        <br />
-        <p className="mb-10 text-2xl font-playfair">
-          estas ingrensando <br /> a un área de plena lectura <br /> asique,
-          ¡ponete comodx!
-        </p>
-        <BarLoading size="70%" />
-      </div> */}
+      )}
+      {timer.timer2 && (
+        <div className="flex flex-col items-center text-center welcome-block">
+          <h2 className="text-4xl font-playfairExtraBold">
+            <strong>hola!</strong>{" "}
+          </h2>
+          <br />
+          <p className="mb-10 text-2xl font-playfair">
+            estas ingrensando <br /> a un área de plena lectura <br /> asique,
+            ¡ponete comodx!
+          </p>
+          <BarLoading size="70%" />
+        </div>
+      )}
     </div>
   );
 };

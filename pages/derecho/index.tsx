@@ -6,8 +6,8 @@ import Footer from "../../components/footer";
 const Derecho = () => {
   return (
     <LayoutHScreen>
-      <NavSide />
-      <Footer />
+      <NavSide sideBar={true}>
+      </NavSide>
     </LayoutHScreen>
   );
 };

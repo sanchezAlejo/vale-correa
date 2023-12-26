@@ -1,16 +1,33 @@
 import Link from "next/link";
 import React from "react";
+import Box from "../icons/Box";
+import IgSocial from "../icons/IgSocial";
+interface props {
+  fixed?: boolean;
+}
 
-const Footer = () => {
+const Footer: React.FC<props> = ({ fixed }) => {
   return (
-    <div className="flex items-center justify-center h-48 bg-black">
-      <p className="text-white">icon</p>
-      <Link className="text-white" href="#">
+    <div
+      className={`${
+        fixed && "fixed bottom-0 left-0 w-full"
+      } flex items-center justify-center h-48 gap-2 bg-black`}
+    >
+      <Box size="24px" />
+      <Link
+        target="_blank"
+        className="text-white "
+        href="mailto:valeriacorrea@gmail.com"
+      >
         valeriacorrea@gmail.com
       </Link>
-      <p className="text-white">icon</p>
-      <Link className="text-white" href={"#"}>
-        valecorrea
+      <IgSocial size="24px" />
+      <Link
+        target="_blank"
+        className="text-white"
+        href={"https://www.instagram.com/valecorreamdq/"}
+      >
+        valecorreadmdq
       </Link>
     </div>
   );

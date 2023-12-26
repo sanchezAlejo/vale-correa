@@ -12,7 +12,9 @@ module.exports = {
       },
       fontFamily: {
         playfair: ["PlayfairDisplay-Regular", "sans"],
-        playfairExtraBold: ["PlayfairDisplay-Bold", "sans"],
+        playfairBold: ["PlayfairDisplay-Bold", "sans"],
+        playfairExtraBold: ["PlayfairDisplay-ExtraBold", "sans"],
+        playfairSemiBold: ["PlayfairDisplay-SemiBold", "sans"],
       },
       animation: {
         "fade-out-1000": "fadeOut 1s ease-out",
