@@ -67,16 +67,17 @@ const YearSideBar = () => {
         year: 2021,
       },
     ]);
-
     handleYearClick(2023);
   }, [state]);
 
   const handleYearClick = (clickedYear: number) => {
     setActiveYear(clickedYear);
-    const selectedCategories = categorieObjet.find(
-      (e) => e.year === clickedYear
+
+    return setCategories(
+      categorieObjet.filter((e) => {
+        return clickedYear === e.year;
+      })
     );
-    setCategories(selectedCategories ? selectedCategories.subcategories : []);
   };
 
   return (
@@ -87,9 +88,9 @@ const YearSideBar = () => {
             {categories.map((category) => (
               <li key={category.id}>
                 <Link href={`/${router.pathname}/${category.id}`}>
-                  {category.subcategories.map((subcategory: any) => (
+                  {category.subcategories.map((subcategory) => (
                     <p
-                      key={subcategory.year}
+                      key={subcategory.subTitle}
                       className="h-full text-2xl text-gray-600"
                     >
                       {subcategory.subTitle}
@@ -104,7 +105,7 @@ const YearSideBar = () => {
       <div className="w-[120px] flex flex-col items-end">
         {yearList.map((yearItem) => (
           <p
-            key={yearItem.subId}
+            key={yearItem.year}
             className={` col-span-1${
               activeYear === yearItem.year && "font-playfairExtraBold text-5xl "
             } text-4xl font-playfair  w-auto cursor-pointer`}
