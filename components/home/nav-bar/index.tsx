@@ -33,7 +33,6 @@ const NavBar: React.FC<props> = ({ maxWhith }) => {
     { label: "inspiración", href: "inspiracion" },
   ];
   const [subCategory, setSetsubCategory] = useState<SubCategory[]>([]);
-  const [activePageUrl, setActivePageUrl] = useState(null);
   useEffect(() => {
     if (router.pathname.includes("derecho")) {
       setSetsubCategory([
@@ -48,12 +47,9 @@ const NavBar: React.FC<props> = ({ maxWhith }) => {
         },
       ]);
     }
-    const newUrl = router.pathname;
-    if (router.query.ID) {
-      setActivePageUrl(newUrl.replace("/[ID]", ""));
-    }
+
     dispatch({ type: "SET_ACTIVE_CATEGORY", payload: "salud" });
-  }, []);
+  }, [dispatch, router.pathname, router.query.ID]);
 
   return (
     <div

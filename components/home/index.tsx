@@ -37,56 +37,56 @@ const IconsTouch = () => {
       <div className=" mt-36 relative w-[20vw] h-[20vw] mx-auto my-1 flex justify-center items-center">
         <IconMenu
           link={"psicologia"}
-          title={"hammer"}
+          title={"Psicologia"}
           className="left-[50%]  top-[-30%] translate-x-[-50%]"
         >
           <Book size="65%" />
         </IconMenu>
         <IconMenu
           link={"bienestar"}
-          title={"hammer"}
+          title={"Bienestar"}
           className="top-[-10%] right-[-15%] "
         >
           <Heart size="65%" />
         </IconMenu>
         <IconMenu
           link={"inspiracion"}
-          title={"hammer"}
+          title={"Inspiracion"}
           className="right-[-30%]  top-[50%] translate-y-[-50%]"
         >
           <Inspiration size="65%" />
         </IconMenu>
         <IconMenu
           link={"derecho"}
-          title={"hammer"}
+          title={"Derecho"}
           className="bottom-[-15%] right-[-15%]"
         >
           <Camera size="65%" />
         </IconMenu>
         <IconMenu
           link={"derecho"}
-          title={"hammer"}
+          title={"Derecho"}
           className="right-[50%]  bottom-[-30%] translate-x-[50%]"
         >
           <Play size="65%" />
         </IconMenu>
         <IconMenu
           link={"derecho"}
-          title={"hammer"}
+          title={"Derecho"}
           className="top-[-10%] left-[-10%] "
         >
           <Hammer size="65%" />
         </IconMenu>
         <IconMenu
           link={"sobre-mi"}
-          title={"hammer"}
+          title={"Sobre mi"}
           className="left-[-30%]  bottom-[50%] translate-y-[50%] "
         >
           <ValeCorrea size="65%" />
         </IconMenu>
         <IconMenu
           link={"filosofia"}
-          title={"hammer"}
+          title={"Filosofia"}
           className="bottom-[-10%] left-[-10%] "
         >
           <Ligth size="65%" />

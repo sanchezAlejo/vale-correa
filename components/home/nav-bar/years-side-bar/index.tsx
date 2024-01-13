@@ -55,7 +55,6 @@ const YearSideBar = () => {
   ];
   useEffect(() => {
     // Simulación de datos del endpoint de años
-    console.log(state);
 
     setYearList([
       {
@@ -68,17 +67,16 @@ const YearSideBar = () => {
         year: 2021,
       },
     ]);
+
     handleYearClick(2023);
   }, [state]);
 
-  const handleYearClick = async (clickedYear: number) => {
+  const handleYearClick = (clickedYear: number) => {
     setActiveYear(clickedYear);
-
-    return setCategories(
-      categorieObjet.filter((e) => {
-        return clickedYear === e.year;
-      })
+    const selectedCategories = categorieObjet.find(
+      (e) => e.year === clickedYear
     );
+    setCategories(selectedCategories ? selectedCategories.subcategories : []);
   };
 
   return (
@@ -89,8 +87,11 @@ const YearSideBar = () => {
             {categories.map((category) => (
               <li key={category.id}>
                 <Link href={`/${router.pathname}/${category.id}`}>
-                  {category.subcategories.map((subcategory) => (
-                    <p className="h-full text-2xl text-gray-600">
+                  {category.subcategories.map((subcategory: any) => (
+                    <p
+                      key={subcategory.year}
+                      className="h-full text-2xl text-gray-600"
+                    >
                       {subcategory.subTitle}
                     </p>
                   ))}
@@ -103,6 +104,7 @@ const YearSideBar = () => {
       <div className="w-[120px] flex flex-col items-end">
         {yearList.map((yearItem) => (
           <p
+            key={yearItem.subId}
             className={` col-span-1${
               activeYear === yearItem.year && "font-playfairExtraBold text-5xl "
             } text-4xl font-playfair  w-auto cursor-pointer`}

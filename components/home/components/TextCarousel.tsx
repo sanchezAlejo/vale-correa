@@ -21,7 +21,7 @@ const TextCarousel: React.FC<Props> = ({ texts }) => {
       settings.responsive.push({
         breakpoint: breakpoint,
         settings: {
-          slidesToShow: Math.ceil(breakpoint / 100) + 1,
+          slidesToShow: Math.ceil(breakpoint / 250) + 1,
         },
       });
     }
@@ -33,11 +33,11 @@ const TextCarousel: React.FC<Props> = ({ texts }) => {
 
   return (
     <div className="relative w-full ">
-      <div className="fixed w-full -translate-x-1/2 -translate-y-1/2 left-1/2 top-1/2">
+      <div className="absolute w-full overflow-hidden -translate-x-1/2 -translate-y-1/2 left-1/2 top-1/2">
         <Slider {...settings}>
           {texts.map((text, index) => (
             <div key={index}>
-              <h3 className="text-center">{text}</h3>
+              <h3 className="text-4xl leading-none text-center font-playfair">{text}</h3>
             </div>
           ))}
         </Slider>

@@ -11,7 +11,7 @@ const Footer: React.FC<props> = ({ fixed }) => {
     <div
       className={`${
         fixed && "fixed bottom-0 left-0 w-full"
-      } flex items-center justify-center h-32 gap-2 bg-black`}
+      } flex items-center justify-center h-28  gap-2 bg-black`}
     >
       <Box size="24px" />
       <Link

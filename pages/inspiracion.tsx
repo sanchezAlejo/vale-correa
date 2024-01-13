@@ -2,17 +2,12 @@ import React from "react";
 import NavBar from "../components/home/nav-bar";
 import LayoutHScreen from "../components/utils/LayoutHScreen";
 import Footer from "../components/footer";
-import NavSide from "../components/navbar-sidebar";
+import Image from "next/image";
 
-const sobreMi = "../static/images/Foto Sobre Mi.png";
+import sobreMi from "../static/images/Foto Sobre Mi.png";
+
 const inspiración = () => {
-  const images = [
-    sobreMi,
-    sobreMi,
-    sobreMi,
-    sobreMi,
-    sobreMi,
-  ];
+  const images = [sobreMi, sobreMi, sobreMi, sobreMi, sobreMi];
   return (
     <LayoutHScreen>
       <NavBar />
@@ -24,12 +19,13 @@ const inspiración = () => {
         </div>
         <div className="grid w-[80%] h-screen  grid-cols-3 grid-rows-2 gap-2">
           {images.map((image, index) => (
-            <img
+            <Image
               key={index}
               src={image}
               className={`object-cover h-full col-span-1 ${
                 index === 1 ? "row-span-2" : ""
               }`}
+              alt={"Icon"}
             />
           ))}
         </div>
