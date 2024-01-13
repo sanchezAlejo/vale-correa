@@ -10,7 +10,7 @@ import ValeCorrea from "../../icons/ValeCorrea";
 const IconNavbar = () => {
   const router = useRouter();
   const styles =
-    "w-[70px] rounded-full flex justify-center items-center bg-black h-[70px]";
+    "w-[70px] min-w-[70px] rounded-full flex justify-center items-center bg-black h-[70px]";
 
   const iconMap = {
     derecho: (

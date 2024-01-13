@@ -59,57 +59,57 @@ const NavBar: React.FC<props> = ({ maxWhith }) => {
     <div
       className={`${
         maxWhith && "px-[5%] "
-      } flex items-center justify-center  mx-auto h-[150px] w-full  relative`}
+      } flex items-center justify-between  mx-auto px-8 h-[150px] w-full  relative`}
     >
-      <div className="absolute left-[5%] top-[50%] translate-y-[-50%]">
-        <IconNavbar />
+      <IconNavbar />
+      <div className="w-full mx-auto">
+        <ul className="flex items-end gap-4 mx-auto w-max">
+          {menuItems.map((item) => (
+            <li key={item.href} className={`w-max relative  `}>
+              <Link
+                className={`text-gray-600  text-2xl ${
+                  router.pathname.replace("/[ID]", "") === `/${item.href}` &&
+                  "font-playfairSemiBold text-4xl text-black  "
+                }`}
+                href={`/${item.href}`}
+              >
+                {item.label}
+              </Link>
+              {subCategory.map(
+                (e) =>
+                  item.label === e.category && (
+                    <div
+                      className="absolute left-[50%] translate-x-[-50%] top-10"
+                      key={e.id}
+                    >
+                      <ul>
+                        {e.sub.map((subItem) => (
+                          <li
+                            className={` ${
+                              state.activeCategory !== null &&
+                              state.activeCategory.includes(subItem.item)
+                                ? "text-black"
+                                : "text-gray-500"
+                            } text-2xl cursor-pointer font-playfair `}
+                            key={subItem.id}
+                            onClick={() =>
+                              dispatch({
+                                type: "SET_ACTIVE_CATEGORY",
+                                payload: subItem.item,
+                              })
+                            }
+                          >
+                            *{subItem.item}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )
+              )}
+            </li>
+          ))}
+        </ul>
       </div>
-      <ul className="flex items-end gap-4">
-        {menuItems.map((item) => (
-          <li key={item.href} className={`w-max relative  `}>
-            <Link
-              className={`text-gray-600  text-2xl ${
-                router.pathname.replace("/[ID]", "") === `/${item.href}` &&
-                "font-playfairSemiBold text-4xl text-black  "
-              }`}
-              href={`/${item.href}`}
-            >
-              {item.label}
-            </Link>
-            {subCategory.map(
-              (e) =>
-                item.label === e.category && (
-                  <div
-                    className="absolute left-[50%] translate-x-[-50%] top-10"
-                    key={e.id}
-                  >
-                    <ul>
-                      {e.sub.map((subItem) => (
-                        <li
-                          className={` ${
-                            state.activeCategory !== null &&
-                            state.activeCategory.includes(subItem.item)
-                              ? "text-black"
-                              : "text-gray-500"
-                          } text-2xl cursor-pointer font-playfair `}
-                          key={subItem.id}
-                          onClick={() =>
-                            dispatch({
-                              type: "SET_ACTIVE_CATEGORY",
-                              payload: subItem.item,
-                            })
-                          }
-                        >
-                          *{subItem.item}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                )
-            )}
-          </li>
-        ))}
-      </ul>
     </div>
   );
 };

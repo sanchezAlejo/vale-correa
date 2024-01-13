@@ -4,7 +4,15 @@ import LayoutHScreen from "../components/utils/LayoutHScreen";
 import Footer from "../components/footer";
 import NavSide from "../components/navbar-sidebar";
 
+const sobreMi = "../static/images/Foto Sobre Mi.png";
 const inspiración = () => {
+  const images = [
+    sobreMi,
+    sobreMi,
+    sobreMi,
+    sobreMi,
+    sobreMi,
+  ];
   return (
     <LayoutHScreen>
       <NavBar />
@@ -15,13 +23,22 @@ const inspiración = () => {
           </p>
         </div>
         <div className="grid w-[80%] h-screen  grid-cols-3 grid-rows-2 gap-2">
-          <div className="col-start-1 col-end-2 row-start-1 row-end-2 bg-blue-600 "></div>
+          {images.map((image, index) => (
+            <img
+              key={index}
+              src={image}
+              className={`object-cover h-full col-span-1 ${
+                index === 1 ? "row-span-2" : ""
+              }`}
+            />
+          ))}
+        </div>
+      </div>
+      {/* <div className="col-start-1 col-end-2 row-start-1 row-end-2 bg-blue-600 "></div>
           <div className="col-start-1 col-end-2 row-start-2 row-end-3 bg-yellow-200 "></div>
           <div className="col-span-1 row-span-3 bg-red-700 "></div>
           <div className="col-start-3 col-end-4 row-start-1 row-end-2 bg-blue-600 "></div>
-          <div className="col-start-3 col-end-4 row-start-2 row-end-3 bg-yellow-200 "></div>
-        </div>
-      </div>
+          <div className="col-start-3 col-end-4 row-start-2 row-end-3 bg-yellow-200 "></div> */}
       <Footer fixed={true} />
     </LayoutHScreen>
   );

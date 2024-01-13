@@ -34,7 +34,13 @@ const myInfo = () => {
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
-      setIsExpanded(scrollPosition > 200);
+      if (scrollPosition > 200) {
+        setIsExpanded(true);
+      }
+      // if(scrollPosition < 50){
+
+      //   setIsExpanded(false);
+      // }
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -48,21 +54,32 @@ const myInfo = () => {
     <>
       <NavBar />
       <div className="relative flex flex-col justify-between">
-        <div className="absolute w-full h-[80vh] ">
-          <div className="relative w-full h-full overflow-hidden ">
-            <img
-              src={`${sobreMi}`}
-              className={`animated-element ${
-                isExpanded ? "" : "expanded"
-              }  object-cover mx-auto mt-16   absolute `}
-              alt={"Sobre mi"}
-            />
+        <div
+          // className={` flex justify-between items-center w-full ${
+          //   isExpanded ? "flex-col-reverse" : ""
+          // }`}
+          className={` flex justify-between flex-col-reverse items-center w-full `}
+        >
+          <h1 className="py-16 text-center font-playfair text-8xl">
+            valeria correa
+          </h1>
+          <div className="w-full ">
+            <div className="relative w-full h-full overflow-hidden ">
+              {/* <img
+                src={`${sobreMi}`}
+                className={`animated-element ${
+                  isExpanded ? "" : "expanded h-[80vh]"
+                }  object-cover mx-auto mt-16    `}
+                alt={"Sobre mi"}
+              /> */}
+              <img
+                src={`${sobreMi}`}
+                className={`animated-element  object-cover mx-auto mt-16    `}
+                alt={"Sobre mi"}
+              />
+            </div>
           </div>
         </div>
-        <div className="w-full h-[80vh]"></div>
-        <h1 className="py-16 text-center font-playfair text-8xl">
-          valeria correa
-        </h1>
         <p className="w-[70%] mx-auto text-2xl pb-16 font-playfair">
           Soy Vale Correa, nací en Mar del Plata en los años ´80 y me considero
           una persona muy curiosa y creativa, con profundos intereses en el
